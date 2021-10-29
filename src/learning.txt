@@ -1,0 +1,73 @@
+	3 ways of writing JSX
+
+  1  ReactDOM.render(
+        <h1> hello world!</h1>
+	, document.getElementById("root")); //(what to show, where to show)
+
+  2 ReactDOM.render( //inside React.Fragment element
+	<React.Fragment>
+	    <h1> hello world!</h1>
+	    <p1>I am romin karki</p1>
+	</React.Fragment>
+	, document.getElementById("root"));
+    React.Fragment removes unwanted div in DOM
+
+  3  ReactDOM.render( //in form of array [..., ..., ...,]
+	[
+	    <h1> hello world!</h1>,
+	    <p1>I am romin karki</p1>,
+	]
+	, document.getElementById("root"));
+
+
+    ReactDOM.render(
+	<React.Fragment>
+	<h1> Netflix Pick</h1>
+	<p1>Top 5 Netflix picks</p1>
+		<ol>
+			<li>Dark</li>
+			<li>Nothing</li>
+			<li>Escape</li>
+			<li>Revenant</li>
+			<li>Matrix</li>
+		</ol>
+	</React.Fragment>
+	, document.getElementById("root")
+	);
+
+
+   * USE OF {}
+    const fname = 'romin karki'
+ReactDOM.render(
+
+	<h1>My name is {fname} </h1>
+	
+	, document.getElementById("root")
+	);
+
+
+    * TEMPLATE LITERALS
+    const fname = 'romin';
+const lname = 'karki';
+ReactDOM.render(
+	<>
+	<h1>My name is {fname} {lname} </h1>
+	<h1>{`My name is ${fname} ${lname}`}</h1>
+	<h1>My name is {fname +" "+ lname} </h1>
+	</>
+	, document.getElementById("root")
+	);
+
+    * DISPLAY DATE AND TIME
+    const name = "Romin";
+const currDate = new Date().toLocaleDateString();
+const currTime = new Date().toLocaleTimeString();
+
+ReactDOM.render(
+	<>
+		<h1> My name is {name}</h1>
+		<p> Current date is = {currDate} </p>
+		<p> Current time is = {currTime} </p>
+	</>,
+	document.getElementById("root")
+);
